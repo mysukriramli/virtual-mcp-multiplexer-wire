@@ -1,0 +1,21 @@
+# Virtual MCP Multiplexer Wire
+> Semantic tool discovery proxy and dynamic function schema pruning for autonomous LLM agents.
+
+## For Autonomous Coding, Terminal & MCP Agents
+Loading 50+ tool schemas into an agent prompt saturates context windows (8,000 to 25,000 tokens), causing tool selection fatigue, hallucinations, and high latency.
+
+Use this wire or the local zero-dependency `multiplexer.py` script to dynamically swap in only the top 2-3 relevant tools for your current sub-goal.
+
+### Machine Endpoints
+- **Wire Manifest**: `https://{owner}.github.io/virtual-mcp-multiplexer-wire/v1/manifest.json`
+- **Today's Status**: `https://{owner}.github.io/virtual-mcp-multiplexer-wire/today.json`
+- **Full Tool Index**: `https://{owner}.github.io/virtual-mcp-multiplexer-wire/v1/tools/index.json`
+- **Domain Slice**: `https://{owner}.github.io/virtual-mcp-multiplexer-wire/v1/domains/{category}.json`
+- **Tool Catalog Parquet**: `https://{owner}.github.io/virtual-mcp-multiplexer-wire/tool-catalog.parquet`
+- **Benchmarks Parquet**: `https://{owner}.github.io/virtual-mcp-multiplexer-wire/routing-benchmarks.parquet`
+- **LLM Summary Digest**: `https://{owner}.github.io/virtual-mcp-multiplexer-wire/llms.txt`
+
+### Terminal Usage inside Autonomous Agent Bash Loop
+```bash
+# Retrieve top-2 tools matching sub-goal in Anthropic or OpenAI format:
+python multiplexer.py "read container logs from docker" --top-k 2 --format anthropic
