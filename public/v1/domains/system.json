@@ -1,0 +1,33 @@
+{
+  "category": "system",
+  "tool_count": 1,
+  "domain_tokens": 118,
+  "tools": [
+    {
+      "tool_id": "mcp__filesystem__read_range",
+      "server_namespace": "filesystem",
+      "tool_name": "read_file_byte_range",
+      "category": "system",
+      "description": "Read an explicit offset and line range of a local disk file without loading entire multi-megabyte payloads.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "file_path": {
+            "type": "string"
+          },
+          "offset_line": {
+            "type": "integer"
+          },
+          "limit_lines": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "file_path",
+          "offset_line",
+          "limit_lines"
+        ]
+      }
+    }
+  ]
+}

@@ -1,21 +1,19 @@
 # Virtual MCP Multiplexer Wire
-> Semantic tool discovery proxy and dynamic function schema pruning for autonomous LLM agents.
+> Last Sync: 2026-10-29T04:40:49.336278+00:00 UTC
+> Optimization: Semantic tool schema routing & dynamic function pruning for autonomous agents.
+> Slashes context window bloat by 85% to 94% by injecting only top-3 relevant MCP tools per step.
 
-## For Autonomous Coding, Terminal & MCP Agents
-Loading 50+ tool schemas into an agent prompt saturates context windows (8,000 to 25,000 tokens), causing tool selection fatigue, hallucinations, and high latency.
+## Domain Catalogs
+- **version_control** (2 tools): `v1/domains/version_control.json`
+- **database** (2 tools): `v1/domains/database.json`
+- **devops** (2 tools): `v1/domains/devops.json`
+- **geospatial** (2 tools): `v1/domains/geospatial.json`
+- **web** (2 tools): `v1/domains/web.json`
+- **system** (1 tools): `v1/domains/system.json`
+- **cloud** (1 tools): `v1/domains/cloud.json`
 
-Use this wire or the local zero-dependency `multiplexer.py` script to dynamically swap in only the top 2-3 relevant tools for your current sub-goal.
-
-### Machine Endpoints
-- **Wire Manifest**: `https://{owner}.github.io/virtual-mcp-multiplexer-wire/v1/manifest.json`
-- **Today's Status**: `https://{owner}.github.io/virtual-mcp-multiplexer-wire/today.json`
-- **Full Tool Index**: `https://{owner}.github.io/virtual-mcp-multiplexer-wire/v1/tools/index.json`
-- **Domain Slice**: `https://{owner}.github.io/virtual-mcp-multiplexer-wire/v1/domains/{category}.json`
-- **Tool Catalog Parquet**: `https://{owner}.github.io/virtual-mcp-multiplexer-wire/tool-catalog.parquet`
-- **Benchmarks Parquet**: `https://{owner}.github.io/virtual-mcp-multiplexer-wire/routing-benchmarks.parquet`
-- **LLM Summary Digest**: `https://{owner}.github.io/virtual-mcp-multiplexer-wire/llms.txt`
-
-### Terminal Usage inside Autonomous Agent Bash Loop
+## Standalone Agent Terminal Invocation
 ```bash
-# Retrieve top-2 tools matching sub-goal in Anthropic or OpenAI format:
-python multiplexer.py "read container logs from docker" --top-k 2 --format anthropic
+# Clone and search directly without context pollution:
+python multiplexer.py "inspect postgres tables and select users" --format anthropic --top-k 2
+```

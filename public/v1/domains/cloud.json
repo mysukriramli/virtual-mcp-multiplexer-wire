@@ -1,0 +1,33 @@
+{
+  "category": "cloud",
+  "tool_count": 1,
+  "domain_tokens": 113,
+  "tools": [
+    {
+      "tool_id": "mcp__aws__s3_get_presigned_url",
+      "server_namespace": "aws",
+      "tool_name": "generate_s3_presigned_url",
+      "category": "cloud",
+      "description": "Generate an authenticated time-bound presigned URL for downloading or uploading objects to Amazon S3.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "bucket": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "expiration_seconds": {
+            "type": "integer",
+            "default": 3600
+          }
+        },
+        "required": [
+          "bucket",
+          "key"
+        ]
+      }
+    }
+  ]
+}

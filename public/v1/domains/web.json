@@ -1,0 +1,50 @@
+{
+  "category": "web",
+  "tool_count": 2,
+  "domain_tokens": 195,
+  "tools": [
+    {
+      "tool_id": "mcp__web__brave_search",
+      "server_namespace": "search",
+      "tool_name": "brave_web_search",
+      "category": "web",
+      "description": "Perform web search queries using the Brave Search API to discover live URLs and text snippets.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer",
+            "default": 5
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "tool_id": "mcp__puppeteer__extract_markdown",
+      "server_namespace": "browser",
+      "tool_name": "navigate_and_distill",
+      "category": "web",
+      "description": "Load a dynamic web page via headless Chrome, evaluate JavaScript, strip boilerplate, and return semantic markdown.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "wait_for_selector": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    }
+  ]
+}

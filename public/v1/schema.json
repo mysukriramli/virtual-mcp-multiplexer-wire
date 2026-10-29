@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "ToolDefinitionSchema",
+  "type": "object",
+  "properties": {
+    "tool_id": {
+      "type": "string"
+    },
+    "server_namespace": {
+      "type": "string"
+    },
+    "tool_name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "parameters": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "tool_id",
+    "server_namespace",
+    "tool_name",
+    "category",
+    "description",
+    "parameters"
+  ]
+}

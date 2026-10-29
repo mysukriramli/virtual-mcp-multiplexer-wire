@@ -1,0 +1,32 @@
+{
+  "wire": "virtual-mcp-multiplexer-wire",
+  "schema_version": "1.0.0",
+  "generated_at": "2026-10-29T04:40:49.336278+00:00",
+  "source_cursor": "mcp-dynamic-tool-multiplexer-v1",
+  "freshness_slo_seconds": 86400,
+  "artifacts": [
+    "today.json",
+    "tool-catalog.parquet",
+    "routing-benchmarks.parquet",
+    "llms.txt",
+    "v1/schema.json",
+    "v1/tools/index.json"
+  ],
+  "coverage": {
+    "registered_domains": [
+      "version_control",
+      "database",
+      "devops",
+      "geospatial",
+      "web",
+      "system",
+      "cloud"
+    ],
+    "total_tools": 12,
+    "token_savings_mean_pct": 83.06
+  },
+  "limitations": [
+    "Routes based on semantic n-gram and namespace affinity scoring",
+    "Dynamic code execution inside external MCP servers remains sandboxed to client runtime"
+  ]
+}

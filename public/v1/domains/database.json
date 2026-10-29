@@ -1,0 +1,44 @@
+{
+  "category": "database",
+  "tool_count": 2,
+  "domain_tokens": 183,
+  "tools": [
+    {
+      "tool_id": "mcp__postgres__read_query",
+      "server_namespace": "postgres",
+      "tool_name": "read_query",
+      "category": "database",
+      "description": "Execute a read-only SQL query against the connected PostgreSQL database and return rows as JSON.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "SELECT SQL query"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "tool_id": "mcp__postgres__describe_table",
+      "server_namespace": "postgres",
+      "tool_name": "describe_table",
+      "category": "database",
+      "description": "Retrieve column definitions, types, constraints, and foreign keys for a specific table in PostgreSQL.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "table_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "table_name"
+        ]
+      }
+    }
+  ]
+}

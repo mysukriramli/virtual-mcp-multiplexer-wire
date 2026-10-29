@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-29",
+  "generated_at_utc": "2026-10-29T04:40:49.336278+00:00",
+  "active_catalog_tools": 12,
+  "unfiltered_token_load": 1322,
+  "benchmarks": [
+    {
+      "query_id": "bench_query_01",
+      "intent": "Read postgres database table schema and run select query",
+      "routed_tools": [
+        "mcp__postgres__read_query",
+        "mcp__postgres__describe_table"
+      ],
+      "budget_full": 1322,
+      "budget_routed": 183,
+      "savings_pct": 86.16
+    },
+    {
+      "query_id": "bench_query_02",
+      "intent": "Check docker container crash logs and restart container",
+      "routed_tools": [
+        "mcp__docker__container_logs",
+        "mcp__docker__restart_container"
+      ],
+      "budget_full": 1322,
+      "budget_routed": 198,
+      "savings_pct": 85.02
+    },
+    {
+      "query_id": "bench_query_03",
+      "intent": "Create pull request on github and update markdown file",
+      "routed_tools": [
+        "mcp__github__create_or_update_file",
+        "mcp__github__create_pull_request"
+      ],
+      "budget_full": 1322,
+      "budget_routed": 259,
+      "savings_pct": 80.41
+    },
+    {
+      "query_id": "bench_query_04",
+      "intent": "Convert latitude longitude coordinate to spatial H3 hexagonal grid",
+      "routed_tools": [
+        "mcp__spatial__h3_latlon_to_cell",
+        "mcp__spatial__bounding_box_polyfill"
+      ],
+      "budget_full": 1322,
+      "budget_routed": 256,
+      "savings_pct": 80.64
+    }
+  ]
+}

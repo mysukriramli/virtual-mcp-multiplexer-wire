@@ -1,0 +1,51 @@
+{
+  "category": "devops",
+  "tool_count": 2,
+  "domain_tokens": 198,
+  "tools": [
+    {
+      "tool_id": "mcp__docker__container_logs",
+      "server_namespace": "docker",
+      "tool_name": "get_container_logs",
+      "category": "devops",
+      "description": "Fetch stdout and stderr logs from a running or stopped Docker container by ID or name.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "container_id": {
+            "type": "string"
+          },
+          "tail_lines": {
+            "type": "integer",
+            "default": 100
+          }
+        },
+        "required": [
+          "container_id"
+        ]
+      }
+    },
+    {
+      "tool_id": "mcp__docker__restart_container",
+      "server_namespace": "docker",
+      "tool_name": "restart_container",
+      "category": "devops",
+      "description": "Gracefully restart an active Docker container with a configurable timeout.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "container_id": {
+            "type": "string"
+          },
+          "timeout_seconds": {
+            "type": "integer",
+            "default": 10
+          }
+        },
+        "required": [
+          "container_id"
+        ]
+      }
+    }
+  ]
+}

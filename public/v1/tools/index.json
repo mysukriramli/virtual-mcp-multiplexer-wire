@@ -1,0 +1,328 @@
+{
+  "updated_at_utc": "2026-10-29T04:40:49.336278+00:00",
+  "total_tools": 12,
+  "total_unfiltered_tokens": 1322,
+  "categories": [
+    "version_control",
+    "database",
+    "devops",
+    "geospatial",
+    "web",
+    "system",
+    "cloud"
+  ],
+  "catalog": [
+    {
+      "tool_id": "mcp__github__create_or_update_file",
+      "server_namespace": "github",
+      "tool_name": "create_or_update_file",
+      "category": "version_control",
+      "description": "Create or update a single file in a GitHub repository with commit message, branch, and content.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "owner": {
+            "type": "string"
+          },
+          "repo": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "branch": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "owner",
+          "repo",
+          "path",
+          "content",
+          "message"
+        ]
+      }
+    },
+    {
+      "tool_id": "mcp__github__create_pull_request",
+      "server_namespace": "github",
+      "tool_name": "create_pull_request",
+      "category": "version_control",
+      "description": "Open a new pull request between branches on GitHub.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "owner": {
+            "type": "string"
+          },
+          "repo": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "head": {
+            "type": "string"
+          },
+          "base": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "owner",
+          "repo",
+          "title",
+          "head",
+          "base"
+        ]
+      }
+    },
+    {
+      "tool_id": "mcp__postgres__read_query",
+      "server_namespace": "postgres",
+      "tool_name": "read_query",
+      "category": "database",
+      "description": "Execute a read-only SQL query against the connected PostgreSQL database and return rows as JSON.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "SELECT SQL query"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "tool_id": "mcp__postgres__describe_table",
+      "server_namespace": "postgres",
+      "tool_name": "describe_table",
+      "category": "database",
+      "description": "Retrieve column definitions, types, constraints, and foreign keys for a specific table in PostgreSQL.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "table_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "table_name"
+        ]
+      }
+    },
+    {
+      "tool_id": "mcp__docker__container_logs",
+      "server_namespace": "docker",
+      "tool_name": "get_container_logs",
+      "category": "devops",
+      "description": "Fetch stdout and stderr logs from a running or stopped Docker container by ID or name.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "container_id": {
+            "type": "string"
+          },
+          "tail_lines": {
+            "type": "integer",
+            "default": 100
+          }
+        },
+        "required": [
+          "container_id"
+        ]
+      }
+    },
+    {
+      "tool_id": "mcp__docker__restart_container",
+      "server_namespace": "docker",
+      "tool_name": "restart_container",
+      "category": "devops",
+      "description": "Gracefully restart an active Docker container with a configurable timeout.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "container_id": {
+            "type": "string"
+          },
+          "timeout_seconds": {
+            "type": "integer",
+            "default": 10
+          }
+        },
+        "required": [
+          "container_id"
+        ]
+      }
+    },
+    {
+      "tool_id": "mcp__spatial__h3_latlon_to_cell",
+      "server_namespace": "spatial",
+      "tool_name": "latlon_to_h3_index",
+      "category": "geospatial",
+      "description": "Convert latitude and longitude coordinates into an Uber H3 discrete global hexagonal cell index.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "latitude": {
+            "type": "number"
+          },
+          "longitude": {
+            "type": "number"
+          },
+          "resolution": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 15
+          }
+        },
+        "required": [
+          "latitude",
+          "longitude",
+          "resolution"
+        ]
+      }
+    },
+    {
+      "tool_id": "mcp__spatial__bounding_box_polyfill",
+      "server_namespace": "spatial",
+      "tool_name": "bbox_to_h3_cells",
+      "category": "geospatial",
+      "description": "Tessellate a geographic bounding box [min_lon, min_lat, max_lon, max_lat] into intersecting H3 cells.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "min_lon": {
+            "type": "number"
+          },
+          "min_lat": {
+            "type": "number"
+          },
+          "max_lon": {
+            "type": "number"
+          },
+          "max_lat": {
+            "type": "number"
+          },
+          "resolution": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "min_lon",
+          "min_lat",
+          "max_lon",
+          "max_lat",
+          "resolution"
+        ]
+      }
+    },
+    {
+      "tool_id": "mcp__web__brave_search",
+      "server_namespace": "search",
+      "tool_name": "brave_web_search",
+      "category": "web",
+      "description": "Perform web search queries using the Brave Search API to discover live URLs and text snippets.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer",
+            "default": 5
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "tool_id": "mcp__puppeteer__extract_markdown",
+      "server_namespace": "browser",
+      "tool_name": "navigate_and_distill",
+      "category": "web",
+      "description": "Load a dynamic web page via headless Chrome, evaluate JavaScript, strip boilerplate, and return semantic markdown.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "wait_for_selector": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    },
+    {
+      "tool_id": "mcp__filesystem__read_range",
+      "server_namespace": "filesystem",
+      "tool_name": "read_file_byte_range",
+      "category": "system",
+      "description": "Read an explicit offset and line range of a local disk file without loading entire multi-megabyte payloads.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "file_path": {
+            "type": "string"
+          },
+          "offset_line": {
+            "type": "integer"
+          },
+          "limit_lines": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "file_path",
+          "offset_line",
+          "limit_lines"
+        ]
+      }
+    },
+    {
+      "tool_id": "mcp__aws__s3_get_presigned_url",
+      "server_namespace": "aws",
+      "tool_name": "generate_s3_presigned_url",
+      "category": "cloud",
+      "description": "Generate an authenticated time-bound presigned URL for downloading or uploading objects to Amazon S3.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "bucket": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "expiration_seconds": {
+            "type": "integer",
+            "default": 3600
+          }
+        },
+        "required": [
+          "bucket",
+          "key"
+        ]
+      }
+    }
+  ]
+}

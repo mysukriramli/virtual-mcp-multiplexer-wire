@@ -1,0 +1,81 @@
+{
+  "category": "version_control",
+  "tool_count": 2,
+  "domain_tokens": 259,
+  "tools": [
+    {
+      "tool_id": "mcp__github__create_or_update_file",
+      "server_namespace": "github",
+      "tool_name": "create_or_update_file",
+      "category": "version_control",
+      "description": "Create or update a single file in a GitHub repository with commit message, branch, and content.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "owner": {
+            "type": "string"
+          },
+          "repo": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "branch": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "owner",
+          "repo",
+          "path",
+          "content",
+          "message"
+        ]
+      }
+    },
+    {
+      "tool_id": "mcp__github__create_pull_request",
+      "server_namespace": "github",
+      "tool_name": "create_pull_request",
+      "category": "version_control",
+      "description": "Open a new pull request between branches on GitHub.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "owner": {
+            "type": "string"
+          },
+          "repo": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "head": {
+            "type": "string"
+          },
+          "base": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "owner",
+          "repo",
+          "title",
+          "head",
+          "base"
+        ]
+      }
+    }
+  ]
+}
