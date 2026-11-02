@@ -1,7 +1,7 @@
 {
   "wire": "virtual-mcp-multiplexer-wire",
   "schema_version": "1.0.0",
-  "generated_at": "2026-11-01T07:53:51.315915+00:00",
+  "generated_at": "2026-11-02T07:59:17.724585+00:00",
   "source_cursor": "mcp-dynamic-tool-multiplexer-v1",
   "freshness_slo_seconds": 86400,
   "artifacts": [
