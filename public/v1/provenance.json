@@ -2,5 +2,5 @@
   "generator": "virtual-mcp-multiplexer-wire",
   "runtime": "python-3.11",
   "scoring_engine": "lexical-semantic-ngram-v1",
-  "generated_at_utc": "2026-11-20T08:56:01.052624+00:00"
+  "generated_at_utc": "2026-11-21T08:37:58.985427+00:00"
 }
